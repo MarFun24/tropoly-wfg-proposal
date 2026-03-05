@@ -238,22 +238,14 @@ nav button.cta-btn:hover{background:var(--tlL)}
   </div>
 </section>
 
-<!-- SCOPE P1 -->
-<section id="p1-scope" class="sec-light" style="padding:56px 0 64px">
-  <div class="sec" style="padding:0 40px">
-    <div class="fade"><span class="mono">What Tropoly Delivers</span></div>
-    <div class="fade" style="transition-delay:.1s"><h2 class="h2" style="margin:12px 0 12px">The productization scope</h2></div>
-    <div class="fade" style="transition-delay:.15s"><p class="bp" style="margin-bottom:32px">Tropoly handles everything required to take your system from an internal tool to a commercial product. Here is what that includes.</p></div>
-    <div id="p1-projects"></div>
-  </div>
-</section>
+
 
 <!-- PRICING P1 -->
 <section id="p1-pricing" style="padding:56px 40px 64px">
   <div class="sec">
     <div class="fade"><span class="mono">Investment & Revenue</span></div>
     <div class="fade" style="transition-delay:.1s"><h2 class="h2" style="margin:12px 0 20px">Your revenue model, built in</h2></div>
-    <div class="fade" style="transition-delay:.2s"><p class="bp" style="margin-bottom:36px">The pricing structure is simple. Three fees per client: discovery, implementation, and monthly. Jorge earns 40% of all revenue generated. Use the calculator below to model your return at any scale.</p></div>
+    <div class="fade" style="transition-delay:.2s"><p class="bp" style="margin-bottom:36px">The pricing structure is simple. Two fees per client: a one-time implementation fee and a monthly recurring fee. Jorge earns 40% of all revenue generated. Use the calculator below to model your return at any scale.</p></div>
 
     <!-- STATIC PRICE TILES -->
     <div class="fade price-grid" style="transition-delay:.25s">
@@ -281,10 +273,7 @@ nav button.cta-btn:hover{background:var(--tlL)}
     <div class="fade calc-wrap" style="transition-delay:.35s">
       <p style="font-family:'DM Mono',monospace;font-size:11px;color:var(--tl);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:24px">Revenue Calculator</p>
 
-      <div class="calc-row">
-        <div class="calc-label">Discovery Fee</div>
-        <div class="calc-input-wrap"><span class="prefix">$</span><input class="calc-input" type="number" id="c-discovery" value="250" min="0" oninput="calcUpdate()"></div>
-      </div>
+
       <div class="calc-row">
         <div class="calc-label">Implementation Fee</div>
         <div class="calc-input-wrap"><span class="prefix">$</span><input class="calc-input" type="number" id="c-impl" value="5000" min="0" oninput="calcUpdate()"></div>
@@ -319,7 +308,7 @@ nav button.cta-btn:hover{background:var(--tlL)}
       <div class="calc-results">
         <div class="calc-result">
           <div class="calc-result-val" id="r-total-onboard">$27,500</div>
-          <div class="calc-result-label">Total onboarding revenue<br>(discovery + impl × clients)</div>
+          <div class="calc-result-label">Total implementation revenue<br>(impl fee × clients)</div>
         </div>
         <div class="calc-result highlight">
           <div class="calc-result-val" id="r-mrr">$2,500</div>
@@ -462,28 +451,21 @@ nav button.cta-btn:hover{background:var(--tlL)}
   <div class="sec">
     <div class="fade"><span class="mono" style="color:var(--gold)">Investment</span></div>
     <div class="fade" style="transition-delay:.1s"><h2 class="h2" style="margin:12px 0 20px">Retainer structure</h2></div>
-    <div class="fade" style="transition-delay:.2s"><p class="bp" style="margin-bottom:36px">The retainer is structured in three phases aligned to the film's timeline. Each phase has a defined scope and a fixed monthly fee. The work intensifies as the release approaches — and so does our investment in the outcome.</p></div>
+    <div class="fade" style="transition-delay:.2s"><p class="bp" style="margin-bottom:36px">A single flat retainer covering the full scope of marketing and communications work across all stages of production, festival strategy, and theatrical release.</p></div>
 
-    <!-- RAMP VISUAL -->
+    <!-- RETAINER CARD -->
     <div class="fade" style="transition-delay:.25s">
-      <div class="ramp-track">
-        <div class="ramp-fill"></div>
+      <div style="background:var(--goldG);border:1px solid var(--goldB);border-radius:20px;padding:48px 40px;text-align:center;max-width:480px;margin:0 auto">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:16px">Monthly Retainer</div>
+        <div style="font-family:'Sora',sans-serif;font-size:56px;font-weight:700;color:var(--goldL);line-height:1;margin-bottom:8px">$8K–$10K</div>
+        <div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--lg);letter-spacing:0.08em;margin-bottom:24px">per month</div>
+        <p style="font-size:14px;color:var(--ow);line-height:1.7;margin:0">Full-scope strategic marketing and communications partnership covering pre-production visibility, festival strategy, press and media relations, and theatrical release execution.</p>
       </div>
-      <div class="ramp-labels">
-        <div class="ramp-label">Phase 1<strong>$4.5K/mo</strong></div>
-        <div class="ramp-label">Phase 2<strong>$8–10K/mo</strong></div>
-        <div class="ramp-label">Phase 3<strong>Up to $15K/mo</strong></div>
-      </div>
-    </div>
-
-    <!-- PHASE CARDS -->
-    <div class="fade" style="transition-delay:.3s;margin-top:40px">
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px" id="p2-phase-cards"></div>
     </div>
 
     <div class="fade" style="transition-delay:.4s;margin-top:24px">
       <div style="background:var(--fw);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 26px">
-        <p style="font-size:13.5px;color:var(--lg);line-height:1.75;margin:0"><span style="color:var(--goldL);font-weight:600">Billing note: </span>Retainer fees are invoiced monthly. Scope adjustments between phases are discussed and agreed upon at least 30 days in advance. Any additional project work outside the retainer scope (e.g. award submissions, festival materials) is quoted and approved separately.</p>
+        <p style="font-size:13.5px;color:var(--lg);line-height:1.75;margin:0"><span style="color:var(--goldL);font-weight:600">Billing note: </span>Retainer fees are invoiced monthly. Any additional project work outside the retainer scope (e.g. award submissions, festival entry fees, event materials) is quoted and approved separately before work begins.</p>
       </div>
     </div>
   </div>
@@ -661,28 +643,10 @@ function buildAccordion(containerId, projects, accentColor) {
   });
 }
 
-buildAccordion('p1-projects', p1Projects, 'var(--tl)');
 buildAccordion('p2-projects', p2Projects, 'var(--gold)');
 
 // ====================================================
-// P2 PHASE CARDS
-// ====================================================
-const phaseData = [
-  {phase:'Phase 1', label:'Foundation', duration:'Months 1–3', rate:'$4,500', sub:'/month', note:'Strategy, narrative, assets, grant applications'},
-  {phase:'Phase 2', label:'Campaign', duration:'Months 4–8', rate:'$8K–$10K', sub:'/month', note:'Festivals, press, audience development'},
-  {phase:'Phase 3', label:'Release', duration:'Final months', rate:'Up to $15K', sub:'/month', note:'Theatrical run, Oscar campaign, distribution'}
-];
-const pcEl = document.getElementById('p2-phase-cards');
-phaseData.forEach((ph, i) => {
-  const d = document.createElement('div');
-  d.style.cssText = `text-align:center;padding:28px 20px;border-radius:16px;border:1px solid rgba(255,255,255,0.08);background:${i===2?'var(--goldG)':'var(--fw)'};border-color:${i===2?'var(--goldB)':'rgba(255,255,255,0.08)'}`;
-  d.innerHTML = `<div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px">${ph.phase}</div>
-    <div style="font-family:'Sora',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px">${ph.label}</div>
-    <div style="font-size:12px;color:var(--lg);margin-bottom:16px">${ph.duration}</div>
-    <div style="font-family:'Sora',sans-serif;font-size:24px;font-weight:700;color:var(--goldL)">${ph.rate}<span style="font-size:14px;font-weight:400;color:var(--lg)">${ph.sub}</span></div>
-    <p style="font-size:12.5px;color:var(--lg);line-height:1.55;margin-top:12px">${ph.note}</p>`;
-  pcEl.appendChild(d);
-});
+// P2 phase cards removed — single retainer rate
 
 // ====================================================
 // NAV
@@ -691,7 +655,6 @@ const navConfig = {
   p1: [
     {id:'p1-hero',label:'Top'},
     {id:'p1-overview',label:'Overview'},
-    {id:'p1-scope',label:'Scope'},
     {id:'p1-pricing',label:'Calculator'},
     {id:'p1-next',label:'Next Steps'},
     {id:'p1-contact',label:'Contact Us', cta:true}
@@ -746,13 +709,12 @@ updateNav();
 // CALCULATOR
 // ====================================================
 function calcUpdate() {
-  const discovery = parseFloat(document.getElementById('c-discovery').value) || 0;
   const impl = parseFloat(document.getElementById('c-impl').value) || 0;
   const monthly = parseFloat(document.getElementById('c-monthly').value) || 0;
   const share = parseFloat(document.getElementById('c-share').value) || 0;
   const clients = parseInt(document.getElementById('c-clients').value) || 0;
 
-  const totalOnboard = (discovery + impl) * clients;
+  const totalOnboard = impl * clients;
   const mrr = monthly * clients;
   const arr = mrr * 12;
   const totalY1 = totalOnboard + arr;
