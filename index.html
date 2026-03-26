@@ -172,6 +172,9 @@ nav button.cta-btn:hover{background:var(--tlL)}
   .topics{grid-template-columns:1fr}
   .calc-results{grid-template-columns:1fr}
   .price-grid{grid-template-columns:1fr}
+  #p2-timeline-rows>div{grid-template-columns:1fr !important}
+  #p2-timeline-rows>div>div:first-child{padding-right:0;margin-bottom:4px}
+  #p2-timeline .sec>div:nth-child(4)>div:first-child{display:none}
   .contact-box{padding:24px 20px}.contact-people{gap:24px}
   nav{top:8px;padding:5px}
   nav button{padding:6px 11px;font-size:11px}
@@ -437,6 +440,39 @@ nav button.cta-btn:hover{background:var(--tlL)}
   </div>
 </section>
 
+<!-- TIMELINE P2 -->
+<section id="p2-timeline" style="padding:56px 40px 64px">
+  <div class="sec">
+    <div class="fade"><span class="mono" style="color:var(--tl)">First 6 Months</span></div>
+    <div class="fade" style="transition-delay:.1s"><h2 class="h2" style="margin:12px 0 12px">Marketing timeline aligned with production</h2></div>
+    <div class="fade" style="transition-delay:.15s"><p class="bp" style="margin-bottom:40px">A clear view of what Tropoly delivers in the first 3–6 months, layered alongside the production schedule so Jorge has full clarity on priorities and sequencing.</p></div>
+
+    <div class="fade" style="transition-delay:.2s">
+      <!-- Month labels -->
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:0;margin-bottom:8px">
+        <div></div>
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:0">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--lg);letter-spacing:0.1em;text-transform:uppercase;text-align:center">Month 1</div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--lg);letter-spacing:0.1em;text-transform:uppercase;text-align:center">Month 2</div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--lg);letter-spacing:0.1em;text-transform:uppercase;text-align:center">Month 3</div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--lg);letter-spacing:0.1em;text-transform:uppercase;text-align:center">Month 4</div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--lg);letter-spacing:0.1em;text-transform:uppercase;text-align:center">Month 5</div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--lg);letter-spacing:0.1em;text-transform:uppercase;text-align:center">Month 6</div>
+        </div>
+      </div>
+
+      <!-- Timeline rows -->
+      <div id="p2-timeline-rows" style="display:flex;flex-direction:column;gap:10px"></div>
+    </div>
+
+    <div class="fade" style="transition-delay:.35s;margin-top:28px">
+      <div style="background:var(--tlG);border-left:3px solid var(--tl);border-radius:0 10px 10px 0;padding:14px 18px">
+        <p style="font-size:13.5px;line-height:1.65;margin:0"><span style="font-weight:600;color:var(--tlL)">Note: </span>This timeline is indicative and will be refined during the kickoff session to align with the production schedule and any existing commitments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PRICING P2 -->
 <section id="p2-pricing" style="padding:56px 40px 64px">
   <div class="sec">
@@ -637,6 +673,46 @@ function buildAccordion(containerId, projects, accentColor) {
 buildAccordion('p2-projects', p2Projects, 'var(--tl)');
 
 // ====================================================
+// P2 TIMELINE
+// ====================================================
+const timelineItems = [
+  { label:'Overall Plan & Budget', sub:'Aligned with production timeline', start:0, span:2 },
+  { label:'Branding', sub:'Name, logo, colours, assets', start:0, span:3 },
+  { label:'Documentary Website', sub:'Initial web presence', start:1, span:2 },
+  { label:'Campaign Set Up', sub:'Social channels, tracking, CRM, mailing list', start:1, span:3 },
+  { label:'Content Advisory', sub:'Trailer concept, shoulder content with production team', start:2, span:4 },
+  { label:'Oscar-Run Events Strategy', sub:'Chinese film festival, indie festivals, oscar run', start:3, span:3 }
+];
+
+(function buildTimeline(){
+  const container = document.getElementById('p2-timeline-rows');
+  timelineItems.forEach((item, i) => {
+    const row = document.createElement('div');
+    row.style.cssText = 'display:grid;grid-template-columns:220px 1fr;gap:0;align-items:center;min-height:52px';
+    const labelDiv = document.createElement('div');
+    labelDiv.style.cssText = 'padding-right:16px';
+    labelDiv.innerHTML = `<div style="font-family:'Sora',sans-serif;font-size:13.5px;font-weight:600;color:var(--wh);line-height:1.3">${item.label}</div><div style="font-family:'Inter',sans-serif;font-size:11.5px;color:var(--mg);line-height:1.4;margin-top:2px">${item.sub}</div>`;
+    const barWrap = document.createElement('div');
+    barWrap.style.cssText = 'display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;height:36px';
+    // grid background lines
+    for(let m=0;m<6;m++){
+      const cell = document.createElement('div');
+      cell.style.cssText = 'border-left:1px solid rgba(255,255,255,0.06);height:100%' + (m===5 ? ';border-right:1px solid rgba(255,255,255,0.06)' : '');
+      barWrap.appendChild(cell);
+    }
+    const bar = document.createElement('div');
+    const leftPct = (item.start / 6 * 100);
+    const widthPct = (item.span / 6 * 100);
+    bar.style.cssText = `position:absolute;top:6px;height:24px;left:${leftPct}%;width:${widthPct}%;background:linear-gradient(90deg,var(--tl),var(--tlL));border-radius:6px;opacity:0.85;transition:opacity 0.2s`;
+    bar.onmouseenter = () => bar.style.opacity = '1';
+    bar.onmouseleave = () => bar.style.opacity = '0.85';
+    barWrap.appendChild(bar);
+    row.appendChild(labelDiv);
+    row.appendChild(barWrap);
+    container.appendChild(row);
+  });
+})();
+
 // P2 phase cards removed — single retainer rate
 
 // ====================================================
@@ -654,6 +730,7 @@ const navConfig = {
     {id:'p2-hero',label:'Top'},
     {id:'p2-overview',label:'Overview'},
     {id:'p2-scope',label:'Scope'},
+    {id:'p2-timeline',label:'Timeline'},
     {id:'p2-pricing',label:'Retainer'},
     {id:'p2-next',label:'Next Steps'},
     {id:'p2-contact',label:'Contact Us', cta:true}
